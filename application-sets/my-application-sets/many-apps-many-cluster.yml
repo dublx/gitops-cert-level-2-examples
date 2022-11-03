@@ -3,6 +3,11 @@ kind: ApplicationSet
 metadata:
   name: cluster-git
 spec:
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
   generators:
     # matrix 'parent' generator
     - matrix:
